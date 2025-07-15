@@ -12,7 +12,7 @@ class Ride{
     Location destination;
     double distance;
     public:
-    Ride( const Driver & d,const Rider& r, Location src, Location dest,double distance):driver(d),rider(r),source(src),destination(dest){
+    Ride( const Driver & d,const Rider& r, Location src, Location dest):driver(d),rider(r),source(src),destination(dest){
         distance=calculateDistance(src,dest);
     }
     private:
