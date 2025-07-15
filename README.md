@@ -1,3 +1,3 @@
 # uber-lit-clone
 first project
-creating this project for the first time
+day1: added location, rider,driver and ride
