@@ -12,9 +12,11 @@ class Ride{
     Location source;
     Location destination;
     double distance;
+    double fair=50;
     public:
     Ride( const Driver & d,const Rider& r, Location src, Location dest):driver(d),rider(r),source(src),destination(dest){
         distance=calculateDistance(src,dest);
+        fair+=distance*15;
     }
     private:
     double calculateDistance(Location a, Location b){
@@ -25,6 +27,7 @@ class Ride{
         cout<<"Ride is booked by "<<rider.getName()<<endl;
         cout<<"..allocated driver:="<<driver.getName()<<endl;
         cout<<" total travelling distance "<<distance<<endl;
+        cout<<"please pay the driver a total of :INR:"<<fair<<"/-"<<endl;
 
     }
 };
