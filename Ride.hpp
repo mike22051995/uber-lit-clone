@@ -1,4 +1,5 @@
 #include<string>
+#pragma once
 #include<iostream>
 #include<cmath>
 #include "location.hpp"
