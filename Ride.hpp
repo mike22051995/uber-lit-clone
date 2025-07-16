@@ -19,6 +19,7 @@ class Ride{
     double calculateDistance(Location a, Location b){
         return distance=sqrt(pow(a.xcor-b.xcor,2)+pow(a.ycor-b.ycor,2));
     }
+    public:
     void printdetails(){
         cout<<"Ride is booked by "<<rider.getName()<<endl;
         cout<<"..allocated driver:="<<driver.getName()<<endl;
