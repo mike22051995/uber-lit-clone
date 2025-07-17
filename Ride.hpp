@@ -7,16 +7,17 @@
 #include"Rider.hpp"
 using namespace std;
 class Ride{
-    Driver driver;
+    Driver* driver;
     Rider rider;
     Location source;
     Location destination;
     double distance;
-    double fair=50;
+   
     public:
-    Ride( const Driver & d,const Rider& r, Location src, Location dest):driver(d),rider(r),source(src),destination(dest){
+    Ride( Driver* d,const Rider& r, Location src, Location dest):driver(d),rider(r),source(src),destination(dest){
         distance=calculateDistance(src,dest);
-        fair+=distance*15;
+    
+        
     }
     private:
     double calculateDistance(Location a, Location b){
@@ -25,9 +26,10 @@ class Ride{
     public:
     void printdetails(){
         cout<<"Ride is booked by "<<rider.getName()<<endl;
-        cout<<"..allocated driver:="<<driver.getName()<<endl;
+        cout<<"..allocated driver:="<<driver->getName()<<endl;
+        cout<<"your vehicle type is "<<driver->getVehicle()->getType()<<endl;
         cout<<" total travelling distance "<<distance<<endl;
-        cout<<"please pay the driver a total of :INR:"<<fair<<"/-"<<endl;
+        cout<<"please pay the driver a total of :INR:"<<driver->getVehicle()->BaseFare()<<endl;
 
     }
 };

@@ -31,7 +31,7 @@ class BookingServices{
             cout<<"nearby drivers are not available"<<endl;
             return nullptr;
         }
-        Ride * ride=new Ride(*driver,rider,rider.getLocation(),dest);
+        Ride* ride=new Ride(driver,rider,rider.getLocation(),dest);
         return ride;
     }
     private:
