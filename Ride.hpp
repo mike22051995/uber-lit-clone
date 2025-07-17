@@ -12,10 +12,12 @@ class Ride{
     Location source;
     Location destination;
     double distance;
+    double fare=0;
    
     public:
     Ride( Driver* d,const Rider& r, Location src, Location dest):driver(d),rider(r),source(src),destination(dest){
         distance=calculateDistance(src,dest);
+        fare=fare+(driver->getVehicle()->BaseFare())+15*distance;
     
         
     }
@@ -29,7 +31,7 @@ class Ride{
         cout<<"..allocated driver:="<<driver->getName()<<endl;
         cout<<"your vehicle type is "<<driver->getVehicle()->getType()<<endl;
         cout<<" total travelling distance "<<distance<<endl;
-        cout<<"please pay the driver a total of :INR:"<<driver->getVehicle()->BaseFare()<<endl;
+        cout<<"please pay the driver a total of :INR:"<<fare<<endl;
 
     }
 };
