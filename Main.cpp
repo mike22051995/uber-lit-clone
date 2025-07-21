@@ -20,6 +20,8 @@ int main(){
     cout<<"__________BOOKING THE RIDE___________"<<endl;
     Ride* ride=services.BookRide(rider,destination);
     if(ride){
+        
+        ride->completed();
         ride->printdetails();
     }
     else{
